@@ -6,7 +6,7 @@
 /*   By: hobenaba <hobenaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:20:53 by hobenaba          #+#    #+#             */
-/*   Updated: 2023/01/06 19:27:26 by hobenaba         ###   ########.fr       */
+/*   Updated: 2023/01/10 10:54:38 by hobenaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ int	main(int ac, char **av)
 		game.p_line = 0;
 		game.p_chara = 0;
 		game.true3 = themap(av[1], &game);
-		game.true2 = 0;
+		
 		if (game.true3 == 8)
 			ft_printf("Error\nThere is no Map to work with");
 		else if (game.true3 == 9)
 			ft_printf("Error\nThis is not a Valid Map");
 		if (game.true3 == 0)
 			game.true = ft_check(&game);
-		// if (game.true == 0)
-		// 	game.true2 = floodfill(&game);
+		if (game.true == 0)
+			game.true2 = floodfill(&game);
 		if (game.true != 0)
 			ft_which_error(&game);
 		if (game.true == 0 && game.true2 == 0 && game.true3 == 0)
